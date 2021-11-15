@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DecoratorPattern.Interfaces;
+using System;
 
 namespace DecoratorPattern
 {
@@ -6,9 +7,11 @@ namespace DecoratorPattern
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            
-          
+            IPizza pizza = new Pizza();
+            IPizza queijo = new QueijoDecorator(pizza);
+            IPizza bacon = new BaconDecorator(queijo);
+            IPizza cebola = new CebolaDecorator(bacon);
+            Console.WriteLine(cebola.BuscarTipo());
         }
     }
 }

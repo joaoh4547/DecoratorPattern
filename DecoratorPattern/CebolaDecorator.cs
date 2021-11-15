@@ -13,7 +13,7 @@ namespace DecoratorPattern
         {
             var pizza = base.BuscarTipo();
             pizza += "\r\n com extra de cebola";
-            return pizza;   
+            return pizza;
         }
     }
 }
